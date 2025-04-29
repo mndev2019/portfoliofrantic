@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+    <section class="portfolio">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h2 class="subtitle">
+                        Apps we built have been trending on the <span class="textblue d-lg-block">App Store</span>
+                    </h2>
+                </div>
+            </div>
+            <div class="d-flex flex-wrap justify-content-center py-4">
+                <button class="category-btn active">All projects</button>
+                <button class="category-btn">Fintech & Banking</button>
+                <button class="category-btn">Ecommerce & Retail</button>
+                <button class="category-btn">HealthTech & Wellness</button>
+                <button class="category-btn">Education & eLearning</button>
+                <button class="category-btn">Automobile Transportation & Logistics</button>
+                <button class="category-btn">
+                    <!-- <img src="https://cdn-icons-png.flaticon.com/512/616/616408.png" alt="Unicorn"> -->
+                    Real Estate & Proptech
+                </button>
+                <button class="category-btn">Media Entertaining</button>
+                <button class="category-btn">SaaS Product Startups</button>
+                <button class="category-btn">Travel, Hospitality & Event Tech</button>
+
+            </div>
+            <div class="row" id="projectContainer">
+
+            </div>
+        </div>
+        </div>
+    </section>
+
+
+    <script>
+        const data = [
+            {
+                type: "Fintech & Banking",
+                icon: "./image/ring money logo orange.png",
+                image: "./image/ring money 2.png",
+                title: "Ring Money",
+                para: "Ring Money simplifies mutual fund investments with expert guidance, real-time insights, secure transactions, and easy accessibility.",
+                iosLink: "https://apps.apple.com/app/id123456789",
+                playstoreLink: "https://play.google.com/store/apps/details?id=com.example",
+                websiteLink: "https://shopeasy.com",
+                casestudy: ""
+            },
+            {
+                type: "Fintech & Banking",
+                icon: "./image/trade flix logo 2.png",
+                image: "./image/trade flix.png",
+                title: "TradeFlix",
+                para: "TradeFlix delivers expert insights, real-time updates, personalized analysis, and secure stock market access for investors.",
+                websiteLink: "https://shopeasy.com",
+                iosLink: "https://apps.apple.com/app/id123456789",
+                playstoreLink: "https://play.google.com/store/apps/details?id=com.example",
+                casestudy: ""
+            },
+            {
+                type: "Fintech & Banking",
+                icon: "./image/dsp logo.png",
+                image: "./image/dsp.png",
+                title: "DSP",
+                para: "We partnered with DSP Mutual Fund to build an intuitive app that simplifies and streamlines mutual fund investments for all investors.",
+                websiteLink: "https://shopeasy.com",
+                iosLink: "https://apps.apple.com/app/id123456789",
+                playstoreLink: "https://play.google.com/store/apps/details?id=com.dsp.invest&hl=en",
+                casestudy: ""
+            },
+            {
+                type: "Fintech & Banking",
+                icon: "./image/funds up logo.png",
+                image: "./image/funds up.png",
+                title: "funds up",
+                para: "FundsUp, built by Frantic Infotech, lets you track portfolios, invest smartly, manage insurance, and access powerful financial calculators easily.",
+                websiteLink: "https://shopeasy.com",
+                iosLink: "https://apps.apple.com/app/id123456789",
+                playstoreLink: "https://play.google.com/store/apps/details?id=com.iw.fundsup&hl=en",
+                casestudy: ""
+            },
+            {
+                type: "Fintech & Banking",
+                icon: "./image/Option Bullz logo.png",
+                image: "./image/Option Bullz.png",
+                title: "Option Bullz",
+                para: "Option Bullz, built by Frantic Infotech, is a trading investment admin platform with modules for users, transactions, ledgers, clubs, and storage.",
+                websiteLink: "https://vanikabirgemstory.com/",
+                casestudy: ""
+            },
+            {
+                type: "Ecommerce & Retail",
+                icon: "./image/Vani Kabir Gemstory logo.png",
+                image: "./image/Vani Kabir Gemstory.png",
+                title: "Vani Kabir Gemstory",
+                para: "The Vani Kabir Gemstory offers energy-infused gemstones crafted with ancient wisdom to heal, uplift, and connect souls through cosmic energy.",
+                websiteLink: "https://shopeasy.com",
+                casestudy: ""
+            },
+            {
+                type: "Ecommerce & Retail",
+                icon: "./image/burger bae logo.png",
+                image: "./image/Burger Bae.png",
+                title: "Burger Bae",
+                para: "Burger Bae is a sustainable streetwear platform blending luxury fashion with urban style, offering eco-conscious clothing through a bold experience.",
+                websiteLink: "https://www.burgerbaeclothing.com/?srsltid=AfmBOorBc8VntSDDwa66DnkbzxCL7IZLWTySbCGC347ArDL5B4Pv5NdU",
+
+                casestudy: ""
+            },
+            {
+                type: "Ecommerce & Retail",
+                icon: "./image/bee inspired logo.png",
+                image: "./image/Bee Inspired.png",
+                title: "Bee Inspired",
+                para: "We developed a mobile app for Bee Inspired Clothing, boosting customer engagement with a sleek, functional, and lifestyle-driven design.",
+                websiteLink: "https://shopeasy.com",
+                iosLink: "https://apps.apple.com/app/id123456789",
+                playstoreLink: "https://play.google.com/store/apps/details?id=com.example",
+                casestudy: ""
+            },
+            {
+                type: "Ecommerce & Retail",
+                icon: "./image/Vani Kabir Gemstory logo.png",
+                image: "./image/Vani Kabir Studio.png",
+                title: "Vani Kabir Studio",
+                para: "Vani Kabir Studio offers energised crystals, feng shui, and metaphysical products to promote self-care, home harmony, and spiritual growth.",
+                websiteLink: "https://www.vanikabirstudio.com/?srsltid=AfmBOopiC15NK_nFA2BGI1TaQoidS5cz8oPzOg30G-fva-djWXGfTQ2e",
+                casestudy: ""
+            },
+            {
+                type: "Ecommerce & Retail",
+                icon: "./image/feel good contacts logo.png",
+                image: "./image/feel good contacts.png",
+                title: "Feel Good Contacts",
+                para: "We partnered with Feel Good Contacts to create a user-friendly app, simplifying shopping and managing vision needs effortlessly and efficiently.",
+                websiteLink: "https://shopeasy.com",
+                casestudy: "",
+                iosLink: "https://apps.apple.com/app/id123456789",
+                playstoreLink: "https://play.google.com/store/search?q=Feel%20Good%20Contacts&c=apps&hl=en",
+            },
+            {
+                type: "HealthTech & Wellness",
+                icon: "./image/repharse logo1.png",
+                image: "./image/repharse.png",
+                title: "Repharse",
+                para: "Repharse is a mental health platform providing personalized wellness plans, mood tracking, therapy access, and resources for mindful living.",
+                websiteLink: "https://shopeasy.com",
+                casestudy: "",
+                iosLink: "https://apps.apple.com/app/id123456789",
+                playstoreLink: "https://play.google.com/store/apps/details?id=com.example",
+            },
+            {
+                type: "HealthTech & Wellness",
+                icon: "./image/CONSULTO LOGO 1.png",
+                image: "./image/CONSULTO.png",
+                title: "Consulto",
+                para: "Consulto is a healthcare app offering free instant and scheduled consultations, enhancing accessibility and convenience in patient-doctor interactions effortlessly.",
+                websiteLink: "https://shopeasy.com",
+                casestudy: "",
+                iosLink: "https://apps.apple.com/app/id123456789",
+                playstoreLink: "https://play.google.com/store/apps/details?id=com.example",
+            },
+            {
+                type: "HealthTech & Wellness",
+                icon: "./image/DOC24 LOGO.png",
+                image: "./image/DOC24.png",
+                title: "DOC24",
+                para: "This doctor dashboard by Frantic streamlines patient tracking, appointments, consultations, and OPD bookings, ensuring efficient and secure healthcare management.",
+                websiteLink: "https://shopeasy.com",
+                casestudy: "",
+
+            },
+            {
+                type: "HealthTech & Wellness",
+                icon: "./image/MY GYM LOGO.png",
+                image: "./image/MY GYM.png",
+                title: "My Gym",
+                para: "My Gym App lets users book slots, track workouts, join classes, connect with trainers, and shop fitness products seamlessly.",
+                websiteLink: "https://shopeasy.com",
+                casestudy: "",
+                iosLink: "https://apps.apple.com/app/id123456789",
+                playstoreLink: "https://play.google.com/store/apps/details?id=com.mygym.com&hl=en",
+
+            },
+            {
+                type: "HealthTech & Wellness",
+                icon: "./image/Wellbeing logo.png",
+                image: "./image/WELL BEING.png",
+                title: "Wellbeing",
+                para: "Wellbeing is a women’s health app offering fitness logs, coach-led programs, and tracking for sleep, hydration, fatigue, and cycles.",
+                websiteLink: "https://shopeasy.com",
+                casestudy: "",
+                iosLink: "https://apps.apple.com/app/id123456789",
+                playstoreLink: "https://play.google.com/store/apps/details?id=com.example",
+
+            },
+            {
+                type: "HealthTech & Wellness",
+                icon: "./image/task force logo.png",
+                image: "./image/task force.png",
+                title: "Task Force",
+                para: "Task Force is a dynamic fitness app offering diverse workouts, progress tracking, and goal-based routines for ultimate fitness achievement.",
+                websiteLink: "https://shopeasy.com",
+                casestudy: "",
+                iosLink: "https://apps.apple.com/app/id123456789",
+                playstoreLink: "https://play.google.com/store/apps/details?id=com.example",
+
+            },
+            {
+                type: "Education & eLearning",
+                icon: "./image/Navodayan logo.png",
+                image: "./image/navoday.png",
+                title: "Navodaya",
+                para: "Navodaya Vidyalaya Samiti platform connects alumni, students, and faculty for job applications, networking, CV sharing, and social interactions.",
+                websiteLink: "https://shopeasy.com",
+                casestudy: "",
+            },
+            {
+                type: "Education & eLearning",
+                icon: "./image/Data Trained logo.png",
+                image: "./image/data trained.png",
+                title: "Data Trained",
+                para: "Data Trained is an edtech platform offering expert-led courses in AI, Data Science, Cloud Computing, and career-focused learning paths.",
+                websiteLink: "https://datatrained.com/?srsltid=AfmBOopzjlnyPImWmy-A1LK853cGNTgCB7xBLEUEAbzpIJTLsibLCLdo",
+                casestudy: "",
+            },
+            {
+                type: "Education & eLearning",
+                icon: "./image/Bilmed logo.png",
+                image: "./image/bilmed.png",
+                title: "Bilmed",
+                para: "Bilmed offers online and on-campus ultrasound courses for freshers and professionals to enhance their ultrasonography knowledge and skills.",
+                websiteLink: "https://www.bilmed.net/",
+                casestudy: "",
+            },
+            {
+                type: "Education & eLearning",
+                icon: "./image/Parevartan logo.png",
+                image: "./image/Parevartan.png",
+                title: "Parevartan",
+                para: "Parevartan School website offers online admissions, fee payments, student login, and full access to school facilities, streamlining education.",
+                websiteLink: "https://iamparevartan.org/",
+                casestudy: "",
+            },
+            {
+                type: "Automobile Transportation & Logistics",
+                icon: "./image/acg logo.png",
+                image: "./image/avg windscreens.png",
+                title: "AVG Windscreens",
+                para: "AVG Windscreens Admin Panel allows admins to manage jobs, invoices, products, orders, customers, suppliers, and warehouses efficiently.",
+                websiteLink: "https://shopeasy.com",
+                casestudy: "",
+            },
+            {
+                type: "Automobile Transportation & Logistics",
+                icon: "./image/CabX logo.png",
+                image: "./image/cabx.png",
+                title: "CabX",
+                para: "CabX, by Frantic Infotech, streamlines car trading with live bidding, C2B sales, certified vehicles, secure payments, and seamless, hassle-free ordering.",
+                websiteLink: "https://shopeasy.com",
+                casestudy: "",
+                iosLink: "https://apps.apple.com/app/id123456789",
+                playstoreLink: "https://play.google.com/store/apps/details?id=com.cabs24.auction&hl=en",
+            },
+            {
+                type: "Automobile Transportation & Logistics",
+                icon: "./image/Rinse - It logo.png",
+                image: "./image/rinse it.png",
+                title: "Rinse-Zone",
+                para: "Rinse-Zone is a user-friendly car wash web app offering profile management, booking, secure payments, reviews, notifications, loyalty rewards, subscription plans.",
+                websiteLink: "https://rinsezone.com/",
+                casestudy: "",
+            },
+            {
+                type: "Automobile Transportation & Logistics",
+                icon: "./image/ZealOnWheel logo.png",
+                image: "./image/zealonwheel.png",
+                title: "ZealOnWheel",
+                para: "ZealOnWheel streamlines transport of furniture, packages, and goods with real-time tracking, secure payments, and reliable, seamless, hassle-free service anytime, anywhere.",
+                websiteLink: "https://shopeasy.com",
+                casestudy: "",
+                iosLink: "https://apps.apple.com/app/id123456789",
+                playstoreLink: "https://play.google.com/store/apps/details?id=com.example",
+            },
+            {
+                type: "Real Estate & Proptech",
+                icon: "./image/Propusers logo.png",
+                image: "./image/propusers.png",
+                title: "PropUsers",
+                para: "PropUsers is a real estate platform for buying, selling, and renting properties—offering trust, transparency, and technology for seamless stakeholder experiences.",
+                websiteLink: "https://propusers.com/",
+                casestudy: "",
+
+            },
+            {
+                type: "Real Estate & Proptech",
+                icon: "./image/Twakkul logo.png",
+                image: "./image/twakkul.png",
+                title: "TWAKKUL",
+                para: "TWAKKUL facilitates global property transactions with trusted listings, secure payments, and seamless search, empowering users to buy and sell internationally.",
+                websiteLink: "https://shopeasy.com",
+                casestudy: "",
+                iosLink: "https://apps.apple.com/app/id123456789",
+                playstoreLink: "https://play.google.com/store/apps/details?id=com.example",
+
+            },
+            {
+                type: "Media Entertaining",
+                icon: "./image/Project Beat logo.png",
+                image: "./image/project beat.png",
+                title: "Project Beat",
+                para: "Project Beat is a feature-rich, user-friendly platform empowering buyers and sellers, executed by Frantic Infotech into a seamless, impactful solution.",
+                websiteLink: "https://shopeasy.com",
+                casestudy: "",
+                iosLink: "https://apps.apple.com/app/id123456789",
+                playstoreLink: "https://play.google.com/store/apps/details?id=com.projectbeat.app&hl=en",
+
+            },
+            {
+                type: "Media Entertaining",
+                icon: "./image/jive cam logo 1.png",
+                image: "./image/jivecam.png",
+                title: "JiveCam",
+                para: "JiveCam delivers crystal-clear video calls and chats with seamless connectivity, intuitive design, and reliable performance anytime for truly connected experiences.",
+                websiteLink: "https://shopeasy.com",
+                casestudy: "",
+                iosLink: "https://apps.apple.com/app/id123456789",
+                playstoreLink: "https://play.google.com/store/apps/details?id=com.example",
+            },
+            {
+                type: "Media Entertaining",
+                icon: "./image/Happening Bazar logo.png",
+                image: "./image/happening bazar.png",
+                title: "Happening Bazar",
+                para: "Happening Bazar connects users to nearby stores and events, offering vendor details, reviews, deals, browsing, a profile for exclusive discounts.",
+                websiteLink: "https://shopeasy.com",
+                casestudy: "",
+                iosLink: "https://apps.apple.com/app/id123456789",
+                playstoreLink: "https://play.google.com/store/apps/details?id=com.happeningbazaar&hl=en",
+            },
+            {
+                type: "Media Entertaining",
+                icon: "./image/Show Booker logo.png",
+                image: "./image/show booker.png",
+                title: "Show Booker",
+                para: "Show Booker simplifies movie ticket booking with secure seat reservations, showtimes, trailers, reviews, and personalized recommendations for a seamless experience.",
+                websiteLink: "https://shopeasy.com",
+                casestudy: "",
+                iosLink: "https://apps.apple.com/app/id123456789",
+                playstoreLink: "https://play.google.com/store/apps/details?id=com.example",
+            },
+            {
+                type: "Media Entertaining",
+                icon: "./image/Bark Beat logo.png",
+                image: "./image/bark beat.png",
+                title: "Bark Beat",
+                para: "Bark Beat blends boxing and music, enabling session bookings, merch purchases, and global connections through an intuitive, community-driven fitness platform.",
+                websiteLink: "https://shopeasy.com",
+                casestudy: "",
+                iosLink: "https://apps.apple.com/app/id123456789",
+                playstoreLink: "https://play.google.com/store/apps/details?id=com.example",
+            },
+            {
+                type: "SaaS Product Startups",
+                icon: "./image/CICO logo.png",
+                image: "./image/cico.png",
+                title: "CICO",
+                para: "CICO is a smart inventory management app for distributors, salespeople, and individuals, streamlining stock control, tracking, and marketing insights efficiently.",
+                websiteLink: "https://www.cicogroup.com/",
+                casestudy: "",
+                iosLink: "https://apps.apple.com/app/id123456789",
+                playstoreLink: "https://play.google.com/store/apps/details?id=com.cicogroup.app&hl=en",
+            },
+            {
+                type: "SaaS Product Startups",
+                icon: "./image/acg logo.png",
+                image: "./image/avg windscreens.png",
+                title: "AVG Windscreens",
+                para: "AVG Windscreens Admin Panel allows admins to manage jobs, invoices, products, orders, customers, suppliers, and warehouses efficiently.",
+                websiteLink: "",
+                casestudy: "",
+            },
+            {
+                type: "Travel, Hospitality & Event Tech",
+                icon: "./image/Geekooz logo.png",
+                image: "./image/Geekooz.png",
+                title: "Geekooz",
+                para: "Geekooz by Frantic Infotech offers seamless UI for travel lovers to book tickets, explore packages, request hotels, and plan getaways.",
+                websiteLink: "https://geekooz.com/",
+                casestudy: "",
+            },
+            {
+                type: "Travel, Hospitality & Event Tech",
+                icon: "./image/Travvoo logo.png",
+                image: "./image/Travvoo.png",
+                title: "Travvoo",
+                para: "Travvoo by Frantic Infotech offers seamless flight and hotel booking, destination discovery, and itinerary planning through a sleek, intuitive interface.",
+                websiteLink: "https://travoo.com/",
+                casestudy: "",
+            },
+        ];
+
+        const projectContainer = document.getElementById('projectContainer');
+        const categoryButtons = document.querySelectorAll('.category-btn');
+
+        // Function to render projects
+        function renderProjects(filteredData) {
+            projectContainer.innerHTML = ''; // Clear first
+
+            filteredData.forEach(item => {
+                const card = `
+                    <div class="col-lg-6 col-12 mb-4">
+                        <div class="w-100 projectcard p-4">
+                             <button class="categorybtn border-0 mb-3">${item.type}</button>
+                            <div class="row align-items-center">
+                                <div class="col-md-6 col-12">
+                                   
+                                    <div class="d-flex gap-2 pt-3 align-items-center">
+                                        <div class="image icon">
+                                            <img src="${item.icon}" alt="icon" class="portfolio-image" />
+                                        </div>
+                                        <div class="text">
+                                            <p class="title mb-0">${item.title}</p>
+                                        </div>
+                                    </div>
+                                    <p class="pt-1 para">${item.para}</p>
+                                    <div class="mt-3 d-flex align-items-center flex-wrap links">
+                                        <a href="${item.websiteLink}" target="_blank" class="btn ms-2 casestudy px-4">
+                                            Explore
+                                        </a>
+                                        <a href="${item.casestudy}" target="_blank" class="btn ms-2 casestudy">
+                                            See Case Study
+                                            <img src="./image/bluearrow.svg" />
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 col-12">
+                                    <img src="${item.image}" class="img-fluid img" alt="project image" />
+                                </div>
+                                <div class="d-flex gap-3 mt-3">
+                            ${item.playstoreLink ? `
+                                <a href="${item.playstoreLink}" target="_blank">
+                                    <img src="./image/google play (1).png" alt="playstore" style="height:44px;" />
+                                </a>
+                            ` : ''}
+                            ${item.iosLink ? `
+                                <a href="${item.iosLink}" target="_blank">
+                                    <img src="./image/app store (1).png" alt="appstore" style="height:44px;" />
+                                </a>
+                            ` : ''}
+                        </div>
+                            </div>
+                        </div>
+                    </div>
+                `;
+                projectContainer.innerHTML += card;
+            });
+        }
+
+        // Initial load: show all projects
+        renderProjects(data);
+
+        // Add event listener to all buttons
+        categoryButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                const selectedCategory = button.textContent.trim();
+
+                // Remove active class from all buttons first
+                categoryButtons.forEach(btn => btn.classList.remove('active'));
+                button.classList.add('active');
+
+                if (selectedCategory === "All projects") {
+                    renderProjects(data); // Show all
+                } else {
+                    const filteredData = data.filter(item => item.type === selectedCategory);
+                    renderProjects(filteredData);
+                }
+            });
+        });
+    </script>
+
+
+</body>
+
+</html>
