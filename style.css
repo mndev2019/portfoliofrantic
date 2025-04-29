@@ -157,3 +157,14 @@ body {
 .projectcard .links {
     margin-left: -7px;
 }
+
+.storelinkbtn {
+    height: 44px;
+}
+
+@media (max-width:768px) {
+    .storelinkbtn {
+
+        height: 30px;
+    }
+}
